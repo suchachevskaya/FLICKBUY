@@ -51,7 +51,8 @@ class TicketController extends Controller
         }
 
 
-        return response()->redirect(route('ticket.index'));
+        return redirect(route('ticket.index'));
+
     }
 
     /**

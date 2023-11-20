@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'avatar',
+        'password',
 
     ];
 
@@ -30,7 +31,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
+
         'remember_token',
     ];
 
@@ -43,4 +44,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    protected function isAdmin():Attribute
+    {
+        $admins=['matroskinux@gmail.com'];
+       return Attribute::make(
+          get:fn()=>in_array($this->email, $admins)
+       );
+    }
 }
