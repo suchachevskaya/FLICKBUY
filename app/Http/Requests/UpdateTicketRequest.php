@@ -6,6 +6,7 @@ use App\Enums\TicketStatus;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
+
 class UpdateTicketRequest extends FormRequest
 {
     /**
